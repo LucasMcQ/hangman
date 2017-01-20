@@ -75,8 +75,6 @@ int get_mode(int argc, char **argv){
 
 char* get_rand_word(int file_loc, char **argv){
 
-//	printf("file_name = %s\n", argv[file_loc]);
-
 	FILE *fp = fopen(argv[file_loc], "r");
 	if(fp == NULL){
 		fprintf(stderr, "Error: file does not exist!\n");
@@ -91,7 +89,6 @@ char* get_rand_word(int file_loc, char **argv){
 
 	while(getline(&line, &sz, fp) != EOF){
 		
-//		printf("the line=%s, len = %d\n", line, (int)strlen(line));
 		lines++;
 
 	} // while
@@ -116,8 +113,6 @@ char* get_rand_word(int file_loc, char **argv){
 
 	int rand_num = (rand() % lines - 1); 
 
-//	printf("num = %d\n", rand_num);
-
 	int count = 0;
 
 	size_t sz2 = 0;
@@ -132,8 +127,6 @@ char* get_rand_word(int file_loc, char **argv){
 		count++;
 
 	} // while
-
-//	printf("word = %s len = %d\n", line2, (int)strlen(line2));
 
 	fclose(fp2);
 //	free(line2);
